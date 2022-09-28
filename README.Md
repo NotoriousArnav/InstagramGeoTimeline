@@ -43,3 +43,16 @@ The format for credentialsFile.json is:
 ```
 ##### --outname can be used to Override Default Setting of saving the file with username.json and username.html to outfile.json and outfile.html
 ##### {}.html file Contains a Map to view in Browser, and Contains all Markers where user have been along with all the Captions and TimeStamp
+
+# Documentation
+Currently, the code is way too messy! The Documentation will be Published after Refactoring the existing code.
+
+# Contribution
+We Highly Apperciate Contributions, be it Nice Documentation, be it Translation of Documentation or contributing to actual source code.
+But it wont take long to become too messy, so we highly apperiate following the Steps that we provide.
+You can [Click Here](https://youtu.be/b_aF5zk22cA) to Get a Idea, how to.
+### Steps for Contribution:
+1. Fork this Repo
+2. clone your Forked Repo to your local machhine
+3. Do changes in your version of code and Continue Developing and Commits
+4. When you think your changes can pe pulled by us in our repo, make a Pull Request. After Review, We will merge your code with us.
