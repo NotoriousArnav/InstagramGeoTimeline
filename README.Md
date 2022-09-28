@@ -33,3 +33,11 @@ options:
 
 ```
 
+## NOTE : credentialsFile is Important! It is used to Login to to Private Instagram API
+The format for credentialsFile.json is:
+```json
+{
+	"username":"foo",
+	"password":"bar"
+}
+```
