@@ -41,3 +41,5 @@ The format for credentialsFile.json is:
 	"password":"bar"
 }
 ```
+##### --outname can be used to Override Default Setting of saving the file with username.json and username.html to outfile.json and outfile.html
+##### {}.html file Contains a Map to view in Browser, and Contains all Markers where user have been along with all the Captions and TimeStamp
