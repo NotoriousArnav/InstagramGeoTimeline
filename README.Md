@@ -1,4 +1,4 @@
-# Instagram Map Timeline Analyzer
+# Instagram Geo Timeline
 A Simple Script to Parse location data of a Public Instagram Account to a Map and JSON document for Further analysis.
 
 # Installation
