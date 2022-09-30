@@ -52,9 +52,9 @@ grab_user_location
 pin_user_location
 ```
 #### grab_user_feed
-Persequites:
-	- username : str
-	- client : instagram_private_api.Client
+Persequites:<br>
+	- username : str <br>
+	- client : instagram_private_api.Client <br>
 
 Example:
 ```python
@@ -70,7 +70,7 @@ for x in user_posts:
 	pprint(x) #print all of them one by one, pretty. (use print for standard print)
 ```
 #### grab_user_location
-Persequites:
+Persequites:<br>
 	- post : dict
 
 Example:
