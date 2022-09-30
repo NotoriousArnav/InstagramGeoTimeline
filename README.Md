@@ -92,6 +92,10 @@ import folium
 m = folium.Map()
 pin_user_location(dt, m) # Provide the location Data and the map to pin it where.
 ```
+# Features that I will Never Implement (who knows I might Change my mind)
+1. Telemetry (Like why?)
+2. Batch Processing via cli ( B*tch you can use this as a module now)
+
 # Contribution
 We Highly Apperciate Contributions, be it Nice Documentation, be it Translation of Documentation or contributing to actual source code.
 But it wont take long to become too messy, so we highly apperiate following the Steps that we provide.
