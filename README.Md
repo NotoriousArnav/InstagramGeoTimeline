@@ -45,7 +45,42 @@ The format for credentialsFile.json is:
 ##### {}.html file Contains a Map to view in Browser, and Contains all Markers where user have been along with all the Captions and TimeStamp
 
 # Documentation
-Currently, the code is way too messy! The Documentation will be Published after Refactoring the existing code.
+Looking Carefully at the code, we find 3 Functions:
+```python
+grab_user_feed
+grab_user_location
+pin_user_location
+```
+#### grab_user_feed
+Persequites:
+	- username : str
+	- client : instagram_private_api.Client
+
+Example:
+```python
+from instagram_private_api import Client
+from pprint import pprint # <-- Well You don't ned it, but The console output looks pretty with this 
+import app
+c = Client(
+		username = "foo",
+		password = "bar"
+	) #Logs in to foo's account with password "bar"
+user_posts = app.grab_user_feed("spam_eggs69", c) #Gets most of the Posts
+for x in user_posts:
+	pprint(x) #print all of them one by one, pretty. (use print for standard print)
+```
+#### grab_user_location
+Persequites:
+	- post : dict
+
+Example:
+```python3
+#Code from previous Example
+#Continues here ...
+dt = app.grab_user_location(user_posts[0]) # Provide the function with a User Post and it will try to grab the geotag
+pprint(dt)
+print(f"{isinstance(dt,dict)=}")
+```
 
 # Contribution
 We Highly Apperciate Contributions, be it Nice Documentation, be it Translation of Documentation or contributing to actual source code.

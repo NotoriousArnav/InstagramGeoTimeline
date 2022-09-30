@@ -25,15 +25,21 @@ def grab_user_location(post):
     location = {}
     if 'location' in post.keys():
         location['time'] = {'timestamp':post['taken_at'], 'simple':datetime.fromtimestamp(post['taken_at']).__str__()}
-        location['coordinates'] = post['location']['lat'], post['location']['lng']
-        location['abbr'] = post['location']['address'],post['location']['short_name']
+        try:
+            location['coordinates'] = post['location']['lat'], post['location']['lng']
+            location['abbr'] = post['location']['address'],post['location']['short_name']
+        except:
+            pass
         location['caption'] = post['caption']['text'] if post['caption'] else "No caption"
     else:
         return None
     return location
 
 def pin_user_location(location, folium_map):
-    folium.Marker(location['coordinates'], popup=f"{'-'.join([x for x in location['abbr']])}<br>{location['caption']}<br>{location['time']['simple']}").add_to(folium_map)
+    try:
+        folium.Marker(location['coordinates'], popup=f"{'-'.join([x for x in location['abbr']])}<br>{location['caption']}<br>{location['time']['simple']}").add_to(folium_map)
+    except:
+        pass
 
 if __name__ == "__main__":
     m = folium.Map()
