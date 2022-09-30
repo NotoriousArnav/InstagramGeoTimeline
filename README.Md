@@ -81,7 +81,17 @@ dt = app.grab_user_location(user_posts[0]) # Provide the function with a User Po
 pprint(dt)
 print(f"{isinstance(dt,dict)=}")
 ```
-
+#### pin_user_location
+Persequits:<br>
+	- location : data<br>
+	- folium_map: folium.Map<br>
+Example:
+```python3
+#Code from Previous Examples Continue here too...
+import folium
+m = folium.Map()
+pin_user_location(dt, m) # Provide the location Data and the map to pin it where.
+```
 # Contribution
 We Highly Apperciate Contributions, be it Nice Documentation, be it Translation of Documentation or contributing to actual source code.
 But it wont take long to become too messy, so we highly apperiate following the Steps that we provide.
