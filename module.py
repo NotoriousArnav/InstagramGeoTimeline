@@ -1,6 +1,5 @@
 from instagram_private_api import Client
 from datetime import datetime
-import argparse
 import folium
 import json
 
