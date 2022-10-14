@@ -21,7 +21,7 @@ def get_target():
         return {
             'feed':feed, 
             'location':list(location),
-            'map':{
+            'location_map':{
                     'html':m._repr_html_()
                 }
             }
