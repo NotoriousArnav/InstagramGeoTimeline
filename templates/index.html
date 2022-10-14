@@ -1,29 +1,23 @@
 {%extends 'base.html'%}
 {%block body%}
-<script>
-	async function grabUserData(username){
-			data = null
-			await fetch('/api/v1/target?username='+username)
-				.then(res => {return res.json})
-				.then(res => {data=res})
-			return data
-		}
-</script>
-<section class="shadow-lg bg-zinc-200 p-5 m-4">
+
+<section x-data :class="$store.darkMode.on && 'bg-zinc-800 text-white'" class="shadow-lg bg-zinc-200 p-5 m-4">
 <h1 class="font-medium text-3xl">Instagram Geo Timeline Tracker</h1>
 <hr style="color: #000;">
 <div class="p-3 gap-2" x-data="{ show_data: false , target:null , data:null}">
 
-	<div id="form" class="p-2 flex gap-4">
-		<input class="rounded p-2" type="text" placeholder="Target Username" x-model="target">
+	<div id="form" class="p-2 grid grid-cols-4 gap-4">
+
+		<input class="rounded p-2 col-span-4" :class="$store.darkMode.on && 'bg-zinc-700 text-white'" type="text" placeholder="Target Username" x-model="target">
 		<button 
 				@click="
 fetch('/api/v1/target?username='+target).then(res=>{return res.json()}).then(res => {data=res;show_data=true})
 " 
-				class="p-2 bg-zinc-600 text-white rounded hover:bg-zinc-700"
+				class="p-2 col-span-1 bg-zinc-600 text-white rounded hover:bg-zinc-700"
 			>
 			Start
 		</button>
+<a :href="'/api/v1/target?username='+target" class="p-2 col-span-3 bg-blue-500 rounded hover:bg-blue-700 items-center text-center">API Call</a>
 	</div>
 	<div x-show="show_data" id="" class="p-3 gap-4"> 
 		<h3 class="text-xl">

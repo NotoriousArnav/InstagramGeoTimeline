@@ -6,11 +6,26 @@
   <meta name="viewport" content="initial-scale=1.0,width=device-width">
   <script src="https://unpkg.com/alpinejs@3.10.4/dist/cdn.min.js" defer></script>
   <script src="https://cdn.tailwindcss.com/"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Instagram Geo Timeline</title>
+
+<script>
+document.addEventListener('alpine:init', ()=>{
+		Alpine.store('darkMode', {
+				on: false,
+				toggle () {
+					this.on = !this.on;
+					console.log(this.on);
+				}
+			})
+	});
+</script>
+
+
 </head>
 
-<body>
-  <header class="p-3 shadow-lg bg-gray-100">
+<body x-data :class="$store.darkMode.on && 'bg-gray-700'">
+  <header class="p-3 shadow-lg bg-gray-100" :class="$store.darkMode.on && 'bg-gray-800 text-white'" x-data>
     <nav class="flex items-center text-center gap-4">
       <h1 class="text-2xl font-medium p-2">Instagram Geo Timeline</h1>
 <ul class="flex gap-2">
@@ -24,12 +39,14 @@
 		<a class="p-2 rounded bg-blue-400 hover:bg-blue-500" href="">Contact</a>
 	</li>
 </ul>
-<button class="rounded p-2 bg-gray-700 text-white m-4">Dark Mode</button>
+<button x-bind:class="$store.darkMode.on && 'bg-gray-300 hover:bg-gray-200 text-black'" class="rounded hover:bg-gray-800 p-2 bg-gray-700 text-white m-4" @click="$store.darkMode.toggle()">
+	<i class="fa-solid fa-moon"></i>
+</button>
     </nav>
   </header>
   {%block body%}
   {%endblock%}
-<footer class="p-4 m-4 bg-gray-200 shadow-lg text-center items-center grid grid-cols-3">
+<footer x-data :class="$store.darkMode.on && 'bg-gray-800 text-white'" class="p-4 m-4 bg-gray-200 shadow-lg text-center items-center grid grid-cols-3">
 	<ul class="items-center text-center">
 		<li>
 			<a href="1">Home</a>
