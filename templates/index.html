@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block body%}
+<div x-data="{ open : false }" class="p-5 m-4">
+	<h1 class="text-2xl">
+		Hello, World
+	</h1>
+	<p x-show="open">
+		Amet nemo culpa impedit atque unde. Mollitia quibusdam iure adipisci laudantium dolorum. Odio maiores ipsam nihil perferendis assumenda Quasi aliquid nesciunt quos unde atque Harum vero sequi id omnis nemo.
+		Adipisicing voluptatum delectus voluptas doloremque illum quae Ipsa eum asperiores voluptatibus commodi cum. Rem asperiores nam neque temporibus veritatis Explicabo dolor rerum aspernatur voluptatibus itaque Culpa enim obcaecati est cupiditate
+	</p>
+	<button @click="open = !open" class="bg-gray-500 hover:bg-gray-600 p-4 rounded text-white">Toggle</button>
+
+</div>
+
+{%endblock%}
