@@ -1,15 +1,27 @@
 {%extends 'base.html'%}
 {%block body%}
-<div x-data="{ open : false }" class="p-5 m-4">
-	<h1 class="text-2xl">
-		Hello, World
-	</h1>
-	<p x-show="open">
-		Amet nemo culpa impedit atque unde. Mollitia quibusdam iure adipisci laudantium dolorum. Odio maiores ipsam nihil perferendis assumenda Quasi aliquid nesciunt quos unde atque Harum vero sequi id omnis nemo.
-		Adipisicing voluptatum delectus voluptas doloremque illum quae Ipsa eum asperiores voluptatibus commodi cum. Rem asperiores nam neque temporibus veritatis Explicabo dolor rerum aspernatur voluptatibus itaque Culpa enim obcaecati est cupiditate
-	</p>
-	<button @click="open = !open" class="bg-gray-500 hover:bg-gray-600 p-4 rounded text-white">Toggle</button>
+<script>
+	async function grabUserData(username){
+			return {}
+		}
+</script>
+<section class="shadow-lg bg-zinc-200 p-5 m-4">
+<h1 class="font-medium text-3xl">Instagram Geo Timeline Tracker</h1>
+<hr style="color: #000;">
+<div class="p-3 gap-2" x-data="{ show_data: true , target:null , data:null}">
+	<div id="form" class="p-2 flex gap-4">
+		<input class="rounded p-2" type="text" placeholder="Target Username" x-model="target">
+		<button class="p-2 bg-zinc-600 text-white rounded hover:bg-zinc-700">
+			Start
+		</button>
+	</div>
+	<div x-show="show_data" id="" class="p-3 gap-4"> 
+		<h3 class="text-xl">
+			Enumeration data on
+		<span x-html='target'></span>
+		</h3>
 
+	</div>
 </div>
-
+</section>
 {%endblock%}

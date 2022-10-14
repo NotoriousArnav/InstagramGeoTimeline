@@ -1,14 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-<meta name="viewport" content="initial-scale=1.0,width=device-width">
-<script src="https://unpkg.com/alpinejs@3.10.4/dist/cdn.min.js" defer></script>
-<script src="https://cdn.tailwindcss.com/"></script>
-	<title>Instagram Geo Timeline</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0,width=device-width">
+  <script src="https://unpkg.com/alpinejs@3.10.4/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <title>Instagram Geo Timeline</title>
 </head>
+
 <body>
-	{%block body%}
-	{%endblock%}	
+  <header class="p-3 shadow-lg bg-gray-100">
+    <nav class="flex items-center text-center gap-4">
+      <h1 class="text-2xl font-medium p-2">Instagram Geo Timeline</h1>
+<ul class="flex gap-2">
+	<li>
+		<a class="p-2 rounded bg-blue-400 hover:bg-blue-500" href="">Home</a>
+	</li>
+	<li>
+		<a class="p-2 rounded bg-blue-400 hover:bg-blue-500" href="">API</a>
+	</li>
+	<li>
+		<a class="p-2 rounded bg-blue-400 hover:bg-blue-500" href="">Contact</a>
+	</li>
+</ul>
+<button class="rounded p-2 bg-gray-700 text-white m-4">Dark Mode</button>
+    </nav>
+  </header>
+  {%block body%}
+  {%endblock%}
+<footer class="p-4 m-4 bg-gray-200 shadow-lg text-center items-center grid grid-cols-3">
+	<ul class="items-center text-center">
+		<li>
+			<a href="1">Home</a>
+		</li>
+		<li>
+			<a href="2">API docs</a>
+		</li>
+		<li>
+			<a href="3">See the source</a>
+		</li>
+		<li>
+			<a href="4">Contact</a>
+		</li>
+	</ul>
+	<ul class="items-center text-center">
+		<li>
+			<a href="1">About</a>
+		</li>
+		<li>
+			<a href="2">T&C</a>
+		</li>
+		<li>
+			<a href="3">Arnav Ghosh</a>
+		</li>
+		<li>
+			<a href="4">Instagram</a>
+		</li>
+	</ul>
+	<ul class="items-center text-center">
+		<li>
+			<a href="1">Twitter</a>
+		</li>
+		<li>
+			<a href="2">YouTube</a>
+		</li>
+		<li>
+			<a href="3">Github</a>
+		</li>
+		<li>
+			<a href="4">Email</a>
+		</li>
+	</ul>
+</footer>
+
 </body>
+
 </html>

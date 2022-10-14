@@ -4,6 +4,7 @@ from module import *
 app = Blueprint('api','api', url_prefix="/api/v1")
 with open('InstagramCreds.json', 'r') as f:
         data = json.load(f)
+        client = Client(**data)
 
 @app.route('/')
 def index():
@@ -12,7 +13,6 @@ def index():
 @app.route('/target')
 def get_target():
     target = request.args.get('username')
-    client = Client(**data)
     feed = grab_user_feed(target, client)
     location = map(grab_user_location, feed)
     m = folium.Map()
