@@ -1,7 +1,21 @@
 # Instagram Geo Timeline
 A Simple Script to Parse location data of a Public Instagram Account to a Map and JSON document for Further analysis.
 
-# Installation
+# API and Dashboard Usage
+Just run main.py using default Python Install or using gunicorn, and then your dashboard should startup at 0.0.0.0:8000 or 0.0.0.0:5000.
+
+# Dashboard Usage
+The Dashboard is made using Alpine and Tailwind CSS.
+The UI is self Explanatory, so no need to Elaborate that, but if you want more Info then click on API Call to get a JSON Output, that has every Info.
+
+# API Usage
+## Endpoint : /api/v1/target
+This Endpoint takes a param username, and returns user's
+1. feed
+2. location
+3. location_map > html
+
+# Script Installation
 ```bash
 git clone https://github.com/NotoriousArnav/InstagramTimelineAnalyzer.git insta_mapper
 cd insta_mapper
@@ -9,7 +23,7 @@ pip3 install -r requirements.txt
 python3 app.py --help
 ```
 
-# Basic Usage
+# Basic Script Usage
 ```bash
 $ ./app.py --help
 usage: app.py [-h] [--credentialFile CREDENTIALFILE] [--username USERNAME]
