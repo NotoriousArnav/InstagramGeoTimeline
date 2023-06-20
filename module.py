@@ -5,6 +5,8 @@ import json
 
 __author__ = "NotoriousArnav"
 __author_GitHub_profile__ = "https://github.com/NotoriousArnav"
+__project_name__ = "InstagramGeoTimeline"
+__project_url__ = f"{__author_GitHub_profile__}/{__project_name__}"
 
 def grab_user_feed(username, client):
     data_frames = []
