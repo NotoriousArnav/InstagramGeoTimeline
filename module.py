@@ -8,7 +8,14 @@ __author_GitHub_profile__ = "https://github.com/NotoriousArnav"
 __project_name__ = "InstagramGeoTimeline"
 __project_url__ = f"{__author_GitHub_profile__}/{__project_name__}"
 
-def grab_user_feed(username, client):
+def grab_user_feed(username:str, client:Client):
+    """
+    Try to grab all Posted and available content via this Function
+
+    Requires
+        - A `Client` Object from `instagram_private_api`
+        - A `username' string that corresponds to an actual instagram user
+    """
     data_frames = []
     dt = client.username_feed(username)
     data_frames.append(dt)
@@ -22,9 +29,18 @@ def grab_user_feed(username, client):
     return items
 
 def grab_user_location(post):
+    """
+    Try to grab location from a Specific post. 
+
+    Requires
+        - A post
+    """
     location = {}
     if 'location' in post.keys():
-        location['time'] = {'timestamp':post['taken_at'], 'simple':datetime.fromtimestamp(post['taken_at']).__str__()}
+        location['time'] = {
+                'timestamp':post['taken_at'],
+                'simple':datetime.fromtimestamp(post['taken_at']).__str__()
+            }
         try:
             location['coordinates'] = post['location']['lat'], post['location']['lng']
             location['abbr'] = post['location']['address'],post['location']['short_name']
@@ -37,8 +53,11 @@ def grab_user_location(post):
 
 def pin_user_location(location, folium_map):
     try:
-        folium.Marker(location['coordinates'], popup=f"{'-'.join([x for x in location['abbr']])}<br>{location['caption']}<br>{location['time']['simple']}").add_to(folium_map)
-    except:
-        pass
+        folium.Marker(
+                location['coordinates'],
+                popup=f"{'-'.join([x for x in location['abbr']])}<br>{location['caption']}<br>{location['time']['simple']}"
+            ).add_to(folium_map)
+    except Exception as E:
+        return E
 
 
